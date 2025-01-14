@@ -1,0 +1,920 @@
+%% 
+%% Copyright 2007-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+%%
+%% 
+%%
+%% $Id: elsarticle-template-num.tex 190 2020-11-23 11:12:32Z rishi $
+%%
+%%
+\documentclass[preprint, review, 12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+%% My extra packages
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[acronym]{glossaries}
+\usepackage{array}
+% \usepackage{gensymb}
+
+%% Acronyms
+\newacronym{ge}{GE}{Generic Enablers}
+\newacronym{iot}{IoT}{Internet of Things}
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{ict}{ICT}{Information and Communication Technology}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{dt}{DT}{Digital Twin}
+\newacronym{plc}{PLC}{Programmable Logic Controller}
+\newacronym{ve}{VE}{Virtual Entity}
+\newacronym{vpe}{VPE}{Virtualized Physical Entity}
+\newacronym{de}{DE}{Digital Entity}
+\newacronym{ua}{OPC UA}{Open Platform Communications Unified Architecture}
+\newacronym{swamp}{SWAMP}{Smart Water Management Platform}
+\newacronym{fao}{FAO}{Food and Agriculture Organization of the United Nations}
+\newacronym{cps}{CPS}{Cyber-physical System}
+\newacronym{fis}{FIS}{Fuzzy Inference System}
+\newacronym{ocb}{OCB}{Orion Context Broker}
+\newacronym{iotaj}{IoTA-JSON}{IoT Agent JSON}
+\newacronym{ppfd}{PPFD}{Photosynthetic Photon Flux Density}
+\newacronym{dli}{DLI}{Daily Light Integral}
+\newacronym{par}{PAR}{Photosynthetically Active Radiation}
+\newacronym{epar}{ePAR}{Extended Photosynthetically Active Radiation}
+\newacronym{pbar}{PBAR}{Photobiologically Active Radiation}
+\newacronym{pwm}{PWM}{Pulsed-Widht Modulation}
+\newacronym{mqtt}{MQTT}{Message Queuing Telemetry Transport}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{ngsi}{NGSI-V2}{Next Generation Service Interface Version 2}
+\newacronym{ga}{GA}{Genetic Algorithm}
+\newacronym{eo}{EO}{Evolutionary Operators}
+
+% \hyphenpenalty=10000000
+
+%% Document begining
+
+\journal{Applied Soft Computing}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%% \fntext[label3]{}
+
+\title{Real-Time Monitoring and Light Optimization for Vertical Farms Based on IoT, Digital Twins, and Genetic Algorithms}
+
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+\author[inst1]{Rafael Gomes Alves}
+\author[inst2]{Fábio Lima}
+\author[inst3] {Italo Moraes Rocha Guedes}
+\author[inst1]{Salvador Pinilos Gimenez}
+
+\affiliation[inst1]{organization={Centro Universitário FEI, Department of Electrical Engineering},
+            addressline={Av. Humberto Alencar Castelo Branco 3972}, 
+            city={São Bernardo do Campo},
+            postcode={09850-901}, 
+            state={São Paulo},
+            country={Brazil}
+}
+
+\affiliation[inst2]{organization={Centro Universitário FEI, Department of Industrial Engineering},
+            addressline={Av. Humberto Alencar Castelo Branco 3972}, 
+            city={São Bernardo do Campo},
+            postcode={09850-901}, 
+            state={São Paulo},
+            country={Brazil}
+}
+
+\affiliation[inst3]{organization={Embrapa Vegetables},
+            addressline={Rodovia BR 060 Km 9 - Samambaia Norte}, 
+            city={Brasília},
+            postcode={70351-970}, 
+            state={Distrito Federal},
+            country={Brazil}
+}
+
+\begin{abstract}
+The global agricultural sector faces mounting challenges from climate change, population growth, urbanization, and environmental degradation, necessitating innovative solutions to ensure food security. Urban and peri-urban agriculture, particularly vertical farming, offers a sustainable approach to increase food production while minimizing land use, reducing environmental impact, and enhancing resource efficiency. This study introduces an Internet of Things enabled smart vertical farming system that leverages digital twin technology and a Genetic Algorithm to optimize lettuce growth. The system monitors and controls key environmental parameters within a growth tower, including temperature, humidity, and RGB LED lighting. A digital twin drives real-time data exchange between the physical and virtual components, while the Genetic Algorithm optimizes the RGB light composition to maximize lettuce growth, assessed by fresh biomass, height, width, and leaf count. Over a 34-day cultivation period, the algorithm identified an optimal RGB composition (R:211, G:169, B:243; maximum intensity: 255), achieving superior fitness scores compared to a cold white light control group. The Internet of Things platform demonstrated robust capabilities in data collection, processing, and actuation, while the Genetic Algorithm showcased its potential for optimizing light recipes in vertical farming. Future research will focus on incorporating additional light spectra, automating data collection—potentially with image recognition—and conducting a comprehensive energy efficiency analysis to further enhance the system's performance.
+\end{abstract}
+
+%%Graphical abstract
+% \begin{graphicalabstract}
+% \includegraphics{grabs}
+% \end{graphicalabstract}
+
+%%Research highlights
+% \begin{highlights}
+% \item Research highlight 1
+% \item Research highlight 2
+% \end{highlights}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Digital twin \sep Vertical farm \sep Genetic Algorithm
+%% PACS codes here, in the form: \PACS code \sep code
+\PACS 0000 \sep 1111
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+\MSC 0000 \sep 1111
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction}
+\label{sec:intro}
+
+The global agricultural scenario is facing significant challenges due to climate change, population growth, urbanization, and environmental degradation \cite{FAO2022a}. Nowadays, one of the main challenges is to warranty food security \cite{FAO2023a}. According to the \gls{fao}, between 690 and 783 million people faced hunger in 2022, and 2.4 billion people did not have access to nutritious, safe, and sufficient food throughout the year. Furthermore, urbanization is projected to result in nearly seven out of ten people residing in cities by 2050 \cite{FAO2023a}. 
+
+In this scenario, a new trend of urban and peri-urban agriculture emerges as one of the possible solutions to increase food production and security in these environments \cite{weidner2019a}. The major advantages of this type of food production system include those related to: I - The reduction of the environmental impact on the land; II - The promotion of food security; III - The adaptation of food systems to climate change; IV - The improvement of the effectiveness in the utilization of energy, water resources and fertilizer inputs; and V - The increase in the nutritional diversity of urban areas \cite{FAO2022b}.
+
+Based on the urban agriculture concept, vertical farming has emerged as a promising strategy in response to the challenge of increasing food production with limited land usage \cite{vatistas2022, eigenbrod2015}. This method offers several other benefits, such as reduced water consumption, decreased pesticide dependence, and the ability to grow crops year-round, regardless of external weather conditions \cite{vandelden2021}. For instance, \cite{asseng2020} indicates that for cereals like wheat, indoor vertical farms could achieve yields 220 to 600 times greater than those related to the traditional fields, all while requiring less land.
+
+Despite its potential, vertical farming faces significant hurdles, including high initial investments, energy inefficiency, limited public policy support, and gaps in knowledge about artificial lighting and crop behavior \cite{vandelden2021, lubna2022}. These challenges underscore the need for integrating advanced technologies, such as \gls{iot} and \gls{ai}, to improve farming practices and system sustainability \cite{dhanaraju2022, elbasi2023}.
+
+Another key technology that can be applied to the vertical farm context is \gls{dt} \cite{monteiro2023}. By enabling bidirectional communication between physical and virtual entities through near real-time updates \cite{jones2020, singh2021}, \gls{dt}s hold promise for transforming agriculture. However, their application to vertical farming remains underexplored \cite{pylianidis2021a}. Current literature lacks detailed frameworks or implementations for leveraging \gls{dt}s in vertical farm cultivation towers, leaving a significant gap in research and practice.
+
+Motivated by these challenges and opportunities, This study addresses these challenges by focusing on two specific areas: optimizing artificial lighting parameters and enabling real-time monitoring and control of vertical farm operations. Artificial lighting plays a crucial role in determining crop growth and energy consumption, yet current systems lack the flexibility and intelligence needed to fine-tune lighting conditions dynamically. Additionally, the absence of a unified, real-time control system limits the scalability and sustainability of these systems.
+
+To overcome these barriers, we propose a novel approach that leverages digital twins (\gls{dt}) integrated with \gls{iot} and \gls{ai} technologies. Sensors and actuators connected to an \gls{iot} platform monitor and manage the cultivation tower. Besides, a heuristic technique of \gls{ai}, the \gls{ga} is responsible for optimizing the parameters that define the artificial light energy (intensity and spectral type), controlling the percentages of Red (R), Green (G) and Blue (B) colors of LEDs. Although there are already published research papers on \gls{dt} in agriculture \cite{verdouw2017, verdouw2021, pylianidis2021a, nasirahmadi2022, monteiro2023}, there is a lack of detailed implementation specifically for the vertical farm cultivation towers in the existing literature. 
+
+Through this interdisciplinary approach, we aim to contribute to the advancement of precision agriculture by enhancing crop productivity and resource efficiency within the vertical farming paradigm. Our \gls{dt} drives near-real-time, bidirectional communication between physical components (crops, sensors, and actuators) and their virtual counterparts, while leveraging genetic algorithms to optimize lighting conditions. By addressing critical challenges in vertical farming, this research aspires to play a pivotal role in ensuring sustainable and efficient food production in urban environments.
+
+\section{Literature review}
+\label{sec:lr}
+
+This section introduces the primary concepts employed throughout this paper. It is organized as follows: Firstly, the \gls{dt} concept is delineated along with a framework for its application in agriculture; secondly, the vertical farm concept and the characteristics of light for plants are expounded; thirdly, the concept of genetic algorithms is elucidated; and finally, the \gls{iot} concept and architecture for crafting \gls{iot} solutions, along with the FIWARE \gls{iot} platform, are discussed.
+
+\subsection{Digital twins}
+\label{sec:dt}
+
+The origin of the term \gls{dt} can be attributed to Michael Grieves and John Vickers from NASA. The first definition of a \gls{dt}is composed of physical products in real space, virtual products in virtual spaces and the connections of data and information between both \cite{grieves2014digital}. 
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{figures/firstdt.png}
+%     \caption{First representation of a digital twin \citep{grieves2014digital}.}
+%     \label{fig:firstdt}
+% \end{figure}
+
+Since this term was first introduced, it has evolved and delved into different domains \cite{barricelli2019} such as health \cite{corral-acero2020}, manufacturing \cite{leng2021, wang2023}, construction \cite{boje2020}, telecommunication \cite{jamshidi2024, feng2023, zhao2020} and agriculture \cite{pylianidis2021a}. The authors in \cite{jones2020} present a series of characteristics for \gls{dt} that are described in Table \ref{tab:dtCharacteristics}, and their relationships are illustrated in Figure \ref{fig:dtCharacteristics}.
+
+\begin{table}[htbp]
+    \centering
+\scalebox{0.7}{
+    \begin{tabular}{m{8em} m{22em}}
+        \hline
+        \textbf{Characteristic} & \textbf{Description} \\
+        \hline
+        Physical Entity/Twin & The physical entity/twin that exists in the physical environment \\
+        Virtual Entity/Twin & The virtual entity/twin that exists in the virtual environment \\
+        Physical Environment & The environment within which the physical entity/twin exists \\
+        Virtual Environment & The environment within which the virtual entity/twin exists\\
+        State & The measured values for all parameters corresponding to the physical/virtual entity/twin and its environment \\
+        Metrology & The act of measuring the state of the physical/virtual entity/twin \\
+        Realization & The act of changing the state of the physical/virtual entity/twin \\
+        Twinning & The act of synchronizing the states of the physical and virtual entity/twin \\
+        Twinning Rate & The rate at which twinning occurs \\
+        Physical-to-Virtual Connection/ Twinning & The data connections/process of measuring the state of the physical entity/twin/environment and realizing that state in the virtual entity/twin/environment \\
+        Virtual-to-Physical Connection/ Twinning & The data connections/process of measuring the state of the virtual entity/twin/environment and realizing that state in the physical entity/twin/environment\\
+        Physical Processes & The processes within which the physical entity/twin is engaged, and/or the processes acting with or upon the physical entity/twin \\
+        Virtual Processes & The processes within which the virtual entity/twin is engaged, and/or the processes acting with or upon the virtual entity/twin \\
+        \hline
+    \end{tabular}
+}
+    \caption{The characteristics of the \gls{dt} and their descriptions according to \cite{jones2020}.}
+    \label{tab:dtCharacteristics}
+\end{table}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/dtCharacteristics.png}
+    \caption{The physical-to-virtual and virtual-to-physical twinning process, according with \cite{jones2020}.}
+    \label{fig:dtCharacteristics}
+\end{figure}
+
+It is important to emphasize that the main characteristic of a \gls{dt} is the communication, in both directions, between the physical and digital entities in a process called twinning \cite{jones2020}. Additionally, according to \cite{singh2021}, a \gls{dt} might have multiple classifications depending on several factors such as creation time, level of integration, application, level of maturity and level of sophistication. The \gls{dt} creation time refers to when in the product life cycle the DT is created. The level of integration indicates the extent of data integration between the physical and virtual entities. The application of a DT can be for prediction or for understanding current and past behavior, and it can be further categorized by its focus, whether on product, production, or performance. Hierarchy-wise, \gls{dt}s can be classified into three levels: unit, system, or system of systems. The level of maturity depends on the data quality and quantity, divided into categories such as partial (I), which has partial data; clone (II), which includes all significant data; or augmented (III), which includes all significant data as well as derived data. Finally, the level of sophistication is categorized by its level of autonomy: pre-digital twin (I), created before the physical entity exists; digital twin (II), incorporating data from the physical entity; adaptive digital twin (III), which includes a user interface allowing manipulation of both physical and virtual entities; and intelligent digital twin (IV), which employs intelligent algorithms capable of learning and adapting to various situations.
+
+
+% In addition, according to \cite{singh2021}, a \gls{dt} might have multiple classifications depending on:
+
+% \begin{itemize}
+% \item DT Creation Time: Indicates when in the product life cycle the DT is
+% created;
+% \item Level of Integration: Indicates the level of data integration between the physical and virtual entities;
+% \item Application: Can be used for prediction or for understanding current
+% and past behavior. It also can be divided depending on the focus of
+% the application between product, production, or performance;
+% \item Hierarchy: Can be divided into three levels: unit, system or system of
+% systems;
+% \item Level of Maturity: Can be divided depending on the data quality and
+% quantity into categories such as: I - partial, which has partial data; II - clone,
+% has all significant data, or III - augmented, has all significant data, and
+% derived data;
+% \item Level of sophistication: Can be divided, depending on its level or
+% autonomy, into categories such as: I - pre-digital twin, before the physical entity is created; II - digital twin, with the data from the
+% physical entity; III - adaptive digital twin, with a user interface between
+% physical and virtual, allowing users to manipulate both entities; IV
+% - intelligent digital twin, with intelligent algorithms capable of learning
+% and adapting to various situations.
+% \end{itemize}
+
+\subsubsection{Digital twins in agriculture}
+\label{sec:DTSmartFarming}
+
+The \gls{dt} applied to agriculture is in its early stages \cite{verdouw2021, neethirajan2021}.  However, this concept is slowly beginning to gain interest in areas such as soil and irrigation management, agricultural machinery, robots, and post-harvest food processing \cite{nasirahmadi2022}. The authors in \cite{verdouw2021} have presented a framework for \gls{dt} the agriculture, as indicated in Figure \ref{fig:dtframework}. 
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/dtframework.png}
+    \caption{Integrated control model for \gls{dt} in agriculture as proposed in \cite{verdouw2021}.}
+    \label{fig:dtframework}
+\end{figure*}
+
+This framework sends the data from sensors in the physical entity (physical object) and external data sources to the virtual entity (digital twin) by passing through a model-based transformation. Then, a selection of characteristics from the virtual entity is passed to the discriminator by another model-based transformation. These characteristics are compared with predefined norms, and the deviations are sent to a decision-making component. This component creates a series of interventions that can be sent directly to an effector to change the physical entity or indirectly to be simulated by the virtual entity \cite{verdouw2021}. 
+
+It is crucial to note that this framework integrates six distinct categories, that are: I - imaginary \gls{dt}, in which the physical entity does not exist yet; II - monitoring \gls{dt}, in which the current state of the physical entity is being tracked; III - predictive \gls{dt}, in which a projection of the states of the physical entity are being made; IV - prescriptive \gls{dt}, in which intelligent systems recommend corrective and preventive actions to physical entities; V - autonomous, in which the physical entity ins controlled without the intervention of humans; and VI - recollection \gls{dt}, in which the physical entity does not exist anymore, but the data is present. However, if one of these categories is absent when applying this framework, some \gls{dt} entities might not be present \cite{verdouw2021}. The delineation of these categories is beyond the scope of this paper.
+
+\subsection{Vertical farming}
+
+According to \cite{al-kodmany2018}, vertical farms are a simple concept of farming indoors vertically instead of outdoors horizontally. However, the authors emphasize that there are different types of vertical farms. The first type is the construction or reuse of tall structures with several levels of growing beds. The second type takes place on the rooftops of buildings. The third type is the visionary multi-story buildings. 
+
+Nonetheless, the term might be associated with different production systems \cite{beacham2019} such as: I - Stacked horizontal systems, II - Multi-floor towers production in balconies, and III - Vertical growth surfaces such as green walls and cylindrical growth units. In addition, vertical farms can have uncontrolled or partially controlled environments, like greenhouses, or fully controlled environments, like plant factories \cite{kozai2020, benke2017a, raminshamshiri2018}. 
+
+Figure \ref{fig:verticalFarm} illustrates an essential structure for a vertical farm in a controlled environment with artificial lighting as described in \cite{kozai2020}. This structure is composed of the following components: I - A thermally insulated environment; II - Several layers of cultivation shelves with artificial lighting; III - A closed water circulation system, including the preparation and supply of the nutrient solution; IV - A forced ventilation and air conditioning system; V - A supplementary carbon dioxide ($CO_2$) supply cell, if necessary; VI - A control unit responsible for monitoring, controlling and managing the various parameters of the production process, aiming to guarantee productivity and food quality.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/verticalFarm.png}
+    \caption{Configuration of a vertical farm consisting of six principal components as defined in \cite{kozai2020}}
+    \label{fig:verticalFarm}
+\end{figure}
+
+For this paper, a vertical farm has the same structure as the one provided by \cite{kozai2020}. This means that a multi-layer structure, known as a growth tower, and a hydroponic system are introduced into a controlled environment to grow crops using artificial lighting. 
+
+\subsubsection{Artificial light characteristics for plants}
+
+The plants respond to variations in light energy conditions, defined by their quantity (intensity and photoperiod) and quality (spectral composition, for example, red, blue, and green in RGB LEDs). The plant's photoreceptors manage this response \cite{kami2010}. Depending on its characteristics, each crop might have a particular response to light energy, but some reactions are common to all plants \cite{paradiso2022}. The light energy might be characterized in 3 different levels (1,2 and 3) and two different categories (quality and quantity) \cite{boros2023a, FUJIWARA202283}. Table \ref{tab:light} presents these levels. 
+
+\begin{table}[htbp]
+\begin{tabular}{lll}
+\hline
+Level & Quantitative & Qualitative \\
+\hline
+1 & Daily light integral (DLI) [$mol m^{-2} D^{-1}$] & Spectral distribution \\
+\hline
+2 & \begin{tabular}[c]{@{}l@{}}Photon irradiance (PPFD) [$\mu mol m^{-2} s^{-1}$]\\ Photoperiod [h/day] \end{tabular}        &   Spectral distribution \\
+\hline
+3 & \begin{tabular}[c]{@{}l@{}}Photon irradiance by waveband:\\ UVB (280-315nm) [$\mu mol m^{-2} s^{-1}$]\\ UVA (315-400nm) [$\mu mol m^{-2} s^{-1}$]\\ Blue (400-500nm) [$\mu mol m^{-2} s^{-1}$]\\ Green (500-00nm) [$\mu mol m^{-2} s^{-1}$]\\ Red (600-700nm) [$\mu mol m^{-2} s^{-1}$]\\ Far Red (700-800nm) [$\mu mol m^{-2} s^{-1}$]\\ Temporal distribution:\\ Photoperiod [h/day]\\ Frequency {[}Hz{]}\\ Duty cycle {[}\%{]}\end{tabular} & \\
+\hline
+\end{tabular}
+\caption{Different levels of the light energy characteristics in horticultural literature as in \cite{boros2023a,FUJIWARA202283}.}
+\label{tab:light}
+\end{table}
+
+In the first level, the standard parameters presented are defined by the \gls{dli} and by the Spectral Distribution, in some cases. The \gls{dli} is the daily photon exposure, defined as the number of photons accumulated over a day on a surface area of 1 $m^2$. It can be calculated using the \gls{ppfd} and is given by the Equation \ref{eq:DLI} \cite{boros2023a}. The \gls{ppfd} is the number of photons that hit a surface area of 1$m^2$ per second in $\mu mol/m^2s$. In the second level, both the \gls{ppfd} and the photoperiod are presented, as well as the spectral distribution. The photoperiod is the number of hours the light is on during a given day. Finally, at level 3 the \gls{ppfd} is presented by each waveband from ultraviolet B ($280-315nm$) to Far Red ($700-800nm$), just outside the visible spectrum. At this level, it is also possible to have intermittent lighting energy, which requires the definition of the lighting energy's frequency and duty cycle. The duty cycle is the quotient of the on-time by the total duration of the on and off period and is calculated by Equation \ref{eq:dutycycle} \cite{boros2023a}.
+
+\begin{equation}
+DLI [mol/m^2\text{day}] = \text{PPFD} [\mu mol/m^2s] \cdot \text{photoperiod} [h] \cdot 3600 \cdot 10^{-6}
+\label{eq:DLI}
+\end{equation}
+
+\begin{equation}
+     D = \frac{t_{on}}{(t_{on} + t_{off})}
+     \label{eq:dutycycle}
+\end{equation}
+
+It is essential to notice that for levels 1 and 2, the photon irradiance, measured by the \gls{dli} or \gls{ppfd}, for each level accordingly, is traditionally limited to the \gls{par}, which has a wavelength interval from 400 to 700 nm. However, some authors define the \gls{epar} \cite{pessarakli2017, zhen2021, zhen2020}, which ranges from 400 to 750 nm. At the same time, the American Society of Agricultural and Biological Engineers (ASABE) uses the \gls{pbar} \cite{zotero-338}, which ranges from 280 to 800 nm.  
+
+\subsection{Genetic algorithm}
+
+The \gls{ga} are applied in many contexts but mainly in search, optimization, and machine learning \cite{goldberg1989, haupt2004, sivanandam2008, valdez2011, kao2008}. There are applications on prediction of air temperature \cite{venkadesh2013}, logistical management \cite{asgari2013}, crop growth and yield \cite{dai2009, jain2021}, power system design \cite{panda2008}, and integrated circuits \cite{delimamoreto2017, moreto2019}. Figure \ref{fig:eaConcepts} illustrates the basic concepts used in \gls{ga} according to \cite{coello2007}. Note that the main terms and definitions used in \gls{ga} are analogous to their biological genetic counterparts. In this regard, a population is composed of individuals encoded as possible solutions to a given problem. These individuals have a genotype, an encoded version of the phenotype. The phenotype is the observable traits or characteristics of an individual solution. Each individual is composed of one or more chromosomes, and each chromosome is composed of certain genes, each of which take certain values, called alleles, in a given position, called a locus.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/EAconcepts.png}
+    \caption{Genetic Algorithms basic concepts, according to \cite{coello2007}}
+    \label{fig:eaConcepts}
+\end{figure}
+
+Figure \ref{fig:ga-basic} illustrates a basic \gls{ga}. It is essential to point out that, just as in nature, there are multiple \gls{eo} that can operate in a population to find the best individual \cite{coello2007}. The three major \gls{eo} associated with \gls{ga} are recombination, mutation, and selection \cite{coello2007}. It should be noted that all \gls{ga} uses a variation of these \gls{eo}, even though there are multiple variations depending on the context and domain in which they are used \cite{coello2007, goldberg1989, haupt2004, sivanandam2008}. Furthermore, note that the \gls{ga} is an iterative process in which the individuals are constantly evaluated, and only the most fitted survive. This process is similar to Darwin's natural selection process \cite{darwin2023origin, coello2007, sivanandam2008}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.2\linewidth]{figures/GA-Basic.jpg}
+    \caption{Basic Genetic Algorithm diagram.}
+    \label{fig:ga-basic}
+\end{figure}
+
+In this study, the elitism (selection method), one-point crossover (recombination operator) and bitwise mutation (mutation operation) were employed as \gls{eo} for generating new individuals \cite{coello2007,sivanandam2008}. First, elitism guarantees that the best individuals are maintained from one generation to the other by selecting those individuals with the best fitness values. These individuals are then recombined with individuals or new random-generated individuals using the one-point crossover operator. To execute a one-point crossover, the chromosome of a parent is represented as a string of 0s and 1s, for example. Subsequently, a crossover point is selected, and new offspring are generated using each segment of the parents, as illustrated in Figure \ref{fig:onepoint}. Finally, the flipping mutation is applied to each new offspring by altering 0s and 1s in their genes with a specified probability. Figure \ref{fig:mutaton} illustrates the mutation operation. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/onepoint.jpg}
+    \caption{One point crossover.}
+    \label{fig:onepoint}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/mutation.jpg}
+    \caption{Bitwise mutation.}
+    \label{fig:mutaton}
+\end{figure}
+
+\subsection{Internet of Things}
+
+The ISO/IEC 20924:2024 \cite{iso20924} defines \gls{iot} as an ``infrastructure of interconnected entities, people, systems, and information resources together with services which process and react to information from the physical world and virtual world''. Since \gls{iot} integrates multiple elements, defining a typical reference architecture for creating and deploying \gls{iot} solutions is essential. In this regard, the European Lighthouse Integrated Project addressing the Internet-of-Things Architecture (IoT-A) \cite{bassi2013} has created a reference architecture and critical building blocks to develop \gls{iot} solutions. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/IoT-A.png}
+    \caption{Functional model for the IoT-A reference architecture by \cite{bassi2013}.}
+    \label{fig:IoT-A}
+\end{figure}
+
+Figure \ref{fig:IoT-A} illustrates the functional model for the IoT-A reference architecture. This model has seven longitudinal elements (light blue) complemented by two transversal elements (dark blue). The transversal elements provide functionalities to the other longitudinal elements \cite{bassi2013}. The functional model encompasses several components with distinct roles. Devices, including sensors and actuators, are used to monitor and control the environment while communicating relevant data with information systems. Communication handles the data exchange between \gls{iot} devices and services, abstracting various communication and transport standards and protocols. IoT services transmit information from devices to virtual entities, enabling storage and availability as needed. Virtual entities represent physical world elements, such as sensors and actuators, within the virtual environment.
+
+IoT process management ensures the conceptual integration between business process management and the processes implemented by \gls{iot} solutions, considering both technological and business characteristics. Service organization orchestrates the services within the \gls{iot} solution, whether internal or external. The application element provides the interface between \gls{iot} systems, users, and other systems, adapting to the desired objectives. Security safeguards the system's information, ensuring access only to authorized individuals and systems. Finally, management governs the \gls{iot} system, focusing on objectives such as cost reduction, addressing unexpected usage issues, handling failures, and ensuring flexibility.
+
+It is important to note that this reference architecture is not tied to any specific technology, application area, or implementation. Instead, it serves as a framework for developing concrete architectures tailored to specific \gls{iot} solutions \cite{bassi2013}.
+
+
+% The following is a concise summary of the functions of each element:
+
+% \begin{itemize}
+%     \item Device: These are sensors and actuators used to monitor and control the environment, as well as communicate such information with information systems. 
+
+%     \item Communication: It is responsible for carrying out data communication between the \gls{iot} devices and services, abstracting a series of communication and transport standards and protocols. =
+
+%     \item IoT Services: They are responsible for transmitting information obtained from devices to virtual entities to store and make such information available as necessary;
+
+%     \item Virtual entities: They are responsible for representing elements of the physical world in the virtual environment, especially the sensors and actuators used in \gls{iot} solutions;
+
+%     \item IoT Process Management: Responsible for the conceptual integration between the business process management and the processes implemented by \gls{iot} solutions. The definition of processes must consider the characteristics of the technologies and businesses involved;
+
+%     \item Service organization: Responsible for orchestrating the services available in the \gls{iot} solution, whether internal or external;
+
+%     \item Application: Responsible for the interface between the \gls{iot} systems and users and other systems according to the objective you want to achieve;
+
+%     \item Security: Responsible for the security and privacy of the \gls{iot} system, ensuring that information is protected and can only be accessed by individuals and systems with due permission;
+
+%     \item Management: Responsible for the governance of the \gls{iot} system to achieve four main objectives: cost reduction, addressing unexpected usage problems, handling failures and flexibility.
+% \end{itemize}
+
+% It is important to emphasize that this reference architecture is not explicitly linked to any particular technology, application area, or implementation. It should be used as a reference for developing concrete architectures to be used by particular \gls{iot} solutions \cite{bassi2013}. 
+
+\subsubsection{FIWARE platform}
+
+The FIWARE \cite{FIWARE2021} is a framework of open-source platform components, called generic enablers, that aims to accelerate the development of intelligent solutions. It also provides easy integration with third-party solutions, applications, and solutions available in its marketplace. The FIWARE generic enablers are divided into five categories: I -Interface to IoT, Robotics and third-party systems; II - Core context management; III - Processing, analyzing and monitoring context; IV - Data/API management and publication monetization; and V - Deployment tools. 
+
+The core generic enabler provided by FIWARE is the \gls{ocb}, which is responsible for defining the information model and a base API for managing context information. The \gls{ocb} has three main functionalities: I - Registering context producer applications and devices; II - creating notifications for other systems whenever the context changes; and III - Querying the context for specific information. 
+
+FIWARE also offers a reference architecture for developing \gls{iot} solutions \cite{FIWARE2018}, as illustrated in Figure \ref{fig:fiwareArchitecture}. This architecture is divided into four main groups \cite{FIWARE2021}: I - The sensor and actuator networks encompass the physical elements implemented in the real world; II - The historical data flow contains the virtual elements responsible for managing, storing, and making data accessible; III - Applications in the agri-food sector include tools, with or without intelligent algorithms, designed to meet the demands of stakeholders; IV - Lastly, data access and security ensure the safety of data and control access to the \gls{iot} platform services.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/fiwareArchitecture.png}
+    \caption{FIWARE architecture as defined in \cite{FIWARE2018}.}
+    \label{fig:fiwareArchitecture}
+\end{figure}
+
+% \begin{itemize}
+%     \item Sensor and actuator networks, which contain the physical elements implemented in the real world;
+
+%     \item Historical data flow, which contains the virtual elements used to manage, store and make data available;
+
+%     \item Applications in the agri-food sector, which contains applications, with or without the use of intelligent algorithms, used to meet stakeholder demands;
+
+%     \item Data access and security contains elements to ensure data security and access to the \gls{iot} platform services.
+% \end{itemize}
+
+It is important to emphasize that this architecture does not use FIWARE generic enablers to help integrate various elements within its framework. However, some papers use FIWARE components in their architectures, such as in \cite{alves2023, verdouw2017, iotbds23, pereira2024, barriga2022}.
+
+\section{Proposed growth tower}
+
+This section presents the proposed vertical farm system, including the physical infrastructure, the proposed \gls{iot} platform and the communication between its components, and the proposed \gls{ga} used to find the best light treatment composed of RGB values for a given luminary.
+
+\subsection{Physical infrastructure for the proposed growth tower}
+\label{sec:infraestructure}
+
+The growth tower system overview is presented in Figure \ref{fig:growthTowerOverview}, and its physical implementation is illustrated in Figure \ref{fig:growthTowerPhysical}. This growth tower comprises a rack enclosed within a closed cabin covered with matte black fabric to isolate the internal environment from external influences effectively. The rack consists of four shelves on which the irrigation system, the crops and lighting fixtures will be supported. Each shelf can receive eight plants, with at least 20 cm between each one. Lettuce (\textit{Lactuca sativa var crispa}) was chosen as the species used in this proposed growth tower since it is the most commonly studied crop in the field of vertical farming research \cite{boros2023a}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/towerSystem.jpg}
+    \caption{Growth tower system overview}
+    \label{fig:growthTowerOverview}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/growthtower.jpg}
+    \caption{Physical implementation of the proposed growth tower.}
+    \label{fig:growthTowerPhysical}
+\end{figure}
+
+The lighting fixtures are composed of three RGB luminaries with four WS2812B LED \cite{worldsemi} strips each, and one luminary is composed of four cold white LED strips. Each RGB strip can be configured to show a mix of red, green, and blue brightness ranging from 0 to 255 using a \gls{pwm} signal. The cold white LED strips can be only turned on and off with a fixed brightness. The treatment area for the RGB lighting has six subdivisions, while the treatment area for the cold white lighting only has one to four plants per RGB lighting treatment and eight for the cold white lighting treatment. 
+
+The irrigation system comprises a pump and a circulatory system that employs the nutrient film technique to deliver the nutrient solution to the crop. The nutrient solution comprised fertilizers from the Flex Kit produced by PlantPar \cite{PlantPar}, formulated with macro and micronutrients suitable for all phases of growing leafy vegetables. The nutrients used are defined in \ref{ap:nutrient}. The tank was constantly replenished with a solution of $1.4 mS/cm$, as recommended by the manufacturer for lettuce crops.
+
+To control the microclimate inside the growth tower, a portable air conditioner was used to maintain the temperature of $25^{\circ}C$, as recommended in the literature \cite{kozai2020}, and circulate the air inside and dehumidify if needed. To monitor and control the growth tower, the system uses two Raspberries Pi, two DHT22 \cite{aosongelectronicsco} sensors and two relays. The two Raspberries are used on one side to establish a communication with the proposed \gls{iot} platform (further detailed in section \ref{sec:iotPlatform}) and on the other site to establish a communication with the sensors and actuators in the growth tower. The Raspberry Pi was chosen since it has multiple pins for connecting devices, has built-in wireless connectivity and can be programmed using a higher-level language, such as Python, making it ideal for quickly prototyping \cite{mathe2024}. The DHT22 sensors are used to monitor temperature and humidity at two locations, one at the top and the other at the bottom of the growth tower. The relays turn on the pump and the cold white LED strips when needed. The RGB strips are controlled directly by the Raspberries Pi using the \gls{pwm} signal, and two of them are used since each Raspberry Pi has two \gls{pwm} channels and there are three shelves, each one controlled by a \gls{pwm} channel. This system also has a computer acting as a local server in which the \gls{iot} platform will be deployed.  
+
+\subsection{Proposed \gls{iot} Platform architecture}
+\label{sec:iotPlatform}
+
+The system architecture used in this research is similar to the one proposed in previous papers from the primary author \cite{alves2019, gomesalves2022, alves2023} and is based on five-layer architecture, which is similar to \cite{kamienski2019}, and the FIWARE \gls{iot} Platform \cite{FIWARE2021}. Figure \ref{fig:architecture} presents the proposed growth tower system architecture. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/Architecture.jpg}
+    \caption{Proposed \gls{iot} platform architecture.}
+    \label{fig:architecture}
+\end{figure}
+
+The components of this proposed \gls{iot} platform are divided as follows: in blue are the FIWARE platform components; in gray are databases; in yellow is a third-party \gls{mqtt} Broker; in orange is the component explicitly developed for this study; in red is a third-party component used to create a dashboard to show the data have been collected; and in green are the devices used to monitor and control the growth tower. Each layer and the function of each component is summarized as follows:
+
+\begin{itemize}
+    \item Layer 1: It represents the device and communication layer, which has the devices, including sensors, actuators and gateways, that monitor and control the growth tower and create an interface with the \gls{iot} platform. It has the following components: I - Sensors, used to collect data from the environment; II - Actuators, used to introduce environmental changes; and III - Gateways, used to establish a communication with the proposed \gls{iot} platform. Details about the devices used, and their operation can be seen in section \ref{sec:devices}
+
+    \item Layer 2: This layer is the data acquisition and security layer, which creates a secure bridge between the devices and the \gls{ocb}. It has the following components: I - The Mosquito \gls{mqtt} broker, used to bridge the communication between multiple devices and the FIWARE \gls{iot} platform using a publish-subscribe mechanism; II - The FIWARE \gls{iotaj}, which is an agent that bridges the \gls{json} protocol to the \gls{ngsi} protocol used by all the FIWARE components;
+
+    \item Layer 3: This is the data management layer responsible for receiving, storing and providing data when needed. It has the following components: I - the \gls{ocb}, which is the main component of the FIWARE platform and it is responsible for managing the entire life cycle of context information, including updates, queries, records, and subscriptions via its \gls{api}; II - The FIWARE Cygnus, which is used to persist data from the \gls{ocb} to the MySQL database, creating a historical view of such data; III - The MySQL database, which is a relational database that stores data collected from the \gls{ocb}; IV - The MongoDB database, which is an on-relational database that stores data as files and is used to store the representations of entities and devices used in the \gls{ocb} and \gls{iotaj} respectively; 
+
+    \item Layer 4: This is the model's layer and is used to define the decision-making models that use data from the proposed \gls{iot} platform and explain the actions that should be taken by the devices to hit a defined target. This layer has the Logic Core component that processes data to create new light recipes that should be applied to the luminaries in the growth tower. The details about this component are described in section \ref{sec:logicCore}.
+
+    \item Layer 5: This is the application services layer and is responsible for providing a user interface for stakeholders to see in near real-time the data from the proposed \gls{iot} platform. This layer has only the Grafana component, an open-source data visualization tool allowing users to create personalized dashboards.  
+\end{itemize}
+
+It is critical to recognize that previous research has used most of the components present in this study \cite{gomesalves2022, alves2023}. However, in those papers, there were no physical devices connected to the platform nor accurate data collected, processed and used to make decisions as proposed in this paper. The connection between devices and the platform is further detailed in section \ref{sec:devices}, and the decision-making process is described in section \ref{sec:logicCore}. However, before the platform can manage the data flowing from and to the devices, defining the information model that represents the growth tower is essential. 
+
+This information model should be defined in the \gls{ocb} and \gls{iotaj} to manage context data properly. The entities used to determine the growth tower and devices in the proposed \gls{iot} platform are presented in Figure\ref{fig:informationModel}. It is essential to clarify that entities created in the \gls{iotaj} are later also made in the \gls{ocb} since the latter component manages the data from the devices. However, by registering the entity in the \gls{iotaj} first, this component can translate different protocols, such as the \gls{json}, to the \gls{ngsi} protocol used in the \gls{ocb}. This component also allows the direction communication between the \gls{ocb} and the devices. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/informationModel.jpg}
+    \caption{Proposed information model to represent the growth tower and devices.}
+    \label{fig:informationModel}
+\end{figure}
+
+The entities in this proposed information model should be able to represent both physical aspects of the growth tower, such as shelves and racks, and virtual aspects, like light recipes and crop types that can be grown in this tower. This model should also be used to represent sensors, actuators, and gateways for monitoring and controlling the growth tower. Each entity is briefly described as follows: I - The DHT22 entity represents a temperature and humidity sensor; II - The pump entity represents the pump that delivers the nutrient solution to the crops; III - The RGB luminaire entity defines the strips used as an artificial lighting source to the crops; IV - The cold light luminaire entity is used as source of artificial lighting for a control group of crops. V - The gateway entity defines the devices that communicate directly to the \gls{ocb}, two Raspberries Pi in the proposed system. VI - The shelf entity defines a light area where a given light recipe will be homogeneously applied and an index location in the growth tower. VII - The growth rack entity defines one particular growth tower with multiple shelves. VIII - The light recipe entity defines an RGB recipe that should be used the next time the RGB luminaires are turned on. IX - The net pot entity defines a specific point in the shelf where a given crop will be cultivated. X - The cultivar entity defines a specific crop that will be cultivated. XI - The crop type entity defines general crop characteristics such as variety, crop cycle, common RGB values, and photoperiod. 
+
+This model can be modified to suit the needs of different vertical farms and crops. This would involve defining new entities for the chosen crop type, including its growth stages, environmental parameters, and the necessary sensors and actuators for its cultivation. In addition, the defined entities can have one-to-one, one-to-many or many-to-many relationships. These relationships are used in the \gls{ocb} to create complex queries such as, for example, ``What are the light recipes for each shelf in a particular growth rack?''. The usage of complex queries in the \gls{ocb} is outside the scope of this paper and can be seen in the \gls{ocb} documentation \cite{fiware-orion}. 
+
+\subsection{Communication between components in the proposed \gls{iot} platform}
+\label{sec:communication}
+
+The communication between some components is described in detail in \cite{alves2023}. However, the Mosquitto \gls{mqtt} Broker, the Logic Core, and the physical devices are new to this endeavor and are described in the sections below.
+
+\subsubsection{Devices connected to the proposed \gls{iot} platform}
+\label{sec:devices}
+
+Two Raspberry Pi are used as gateways, allowing one side to connect sensors and actuators in the growth tower and another to communicate to the \gls{iot} platform. Figure \ref{fig:esquematic} illustrates the physical connection between the Raspberry Pi and the sensors and actuators (see \ref{ap:eletric} for details).  Two Raspberries Pi were used because each device has two independent channels for \gls{pwm} communication, and three \gls{pwm} signals are needed for each of the three shelves where RGB lighting will be introduced. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Eletrico.jpg}
+    \caption{Electrical circuit schematic for devices connect to the Raspberry Pi.}
+    \label{fig:esquematic}
+\end{figure}
+
+It is essential to highlight that using only one Raspberry Pi is possible by connecting the data wire from one RGB strip to the next in the whole growth tower. However, it is necessary to check for signal attenuation depending on the number of LEDs that will be controlled. 
+
+Figure \ref{fig:devices} illustrates how the connection between devices and the \gls{iot} platform occurs. In this figure, devices are represented in green, scripts, or files are described in purple, and in yellow is the \gls{mqtt} broker, which is part of the proposed \gls{iot} platform. The configuration file has environment variables used to define constant values, such as the broker address on the network, the sensors, actuators' identification names, and other constants. The \gls{mqtt} client is used to publish data and subscribe to changes in the \gls{mqtt} broker. The sensor and actuator class files defined the sensors and actuators following object-oriented programming concepts to allow the proposed system to scale up. The main file orchestrates the behavior of the other files in a primary function. The devices were programmed using Python programming language version 3.10. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/Devices.jpg}
+    \caption{Connection between devices and the proposed \gls{iot} platform.}
+    \label{fig:devices}
+\end{figure}
+
+To establish the communication between the two Raspberry Pi and the \gls{mqtt} Broker, it is necessary to define the topics for measurements and commands following the FIWARE convention. In this regard, the \gls{mqtt} client class publishes measurements to topics following the convention `` /json/api-key/device id/attrs'', in which the ``api-key'' and ``device id'' should be changed to match what is defined in the \gls{iotaj} when registering a device. In addition, the \gls{mqtt} client subscribes to topics with the following convention ``api-key/device id/attrs''. Note that when sending measurements, it is mandatory to include ``json'' in the topic, so the proper \gls{iot} Agent is used, whereas when receiving commands, this is unnecessary. The communication between the devices and other components in the proposed \gls{iot} platform is further detailed in section \ref{sec:broker}.
+
+The digital twinning process between each Raspberry Pi, sensor or actuator and their virtual entity counterparts is enabled by using the \gls{mqtt} Broker alongside \gls{ocb} and \gls{iotaj}. This is the case since the \gls{ocb} can describe the virtual entities representing the physical objects, while the \gls{mqtt} Broker and \gls{iotaj} are used as a bridge between those entities and the devices themselves. 
+
+\subsubsection{Mosquitto \gls{mqtt} Broker}
+\label{sec:broker}
+
+The Mosquitto \gls{mqtt} Broker bridges the devices and the proposed \gls{iot} platform. Figure \ref{fig:mqttBroker} illustrates the communication between each device and the proposed platform. When data is published to the platform, the following sequence of events is carried out: I - The Raspberry Pi establishes a connection to the sensor using the proper connection (I2C, UART, \gls{pwm} etc.) through the device`s pins; II - The devices send the data gathered by the sensor to the Raspberry Pi; III - The Raspberry Pi sent the data to the Mosquito \gls{mqtt} broker in the proper topic, described in the configuration file; IV - The Mosquitto \gls{mqtt} Broker forwards the data to the \gls{iotaj} to be converted and parsed correctly; V - The \gls{iotaj} forwards the data to a proper entity in the \gls{ocb} to be available for users of the \gls{ocb} \gls{api}. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{figures/mqttbroker.jpg}
+    \caption{Communication between the \gls{mqtt} Broker and other components.}
+    \label{fig:mqttBroker}
+\end{figure}
+
+In addition, when the proposed \gls{iot} platform needs to send a command or configuration variable to the sensors and actuators, the following sequence of events is carried out: I - The \gls{ocb} sends the command to the \gls{iotaj}; II - The \gls{iotaj} forwards the command to the Mosquitto \gls{mqtt} Broker and responds to the \gls{ocb} indicating that the command was found, but it is waiting for the result of the command. This is done by pointing to the \gls{ocb} entity that the command result is pending; III - The Mosquitto \gls{mqtt} Broker forwards the command to the proper Raspberry Pi that has the sensor/actuator or the appropriate configuration file in it; IV - The Raspberry Pi executes the command by using its connection (I2C, UART, \gls{pwm} etc.) or make the needed changes in the configuration file; V - After the command is executed, the Raspberry Pi saves the result of this change locally, indicating whether the change was successful or not;  VI - The Raspberry Pi forwards the result of the changes to the Mosquitto \gls{mqtt} Broker in the proper topic described in the configuration file; VII -The Mosquitto \gls{mqtt} Broker forwards the data to the \gls{iotaj} to be converted and parsed correctly; VIII - The \gls{iotaj} forwards the data to proper entity in the \gls{ocb} to be available for users of the \gls{ocb} API. 
+
+It is important to underscore that typically, a sensor only sends data to the proposed platform, while an actuator only receives commands from it. However, a given sensor can receive commands or configuration variables such as, for instance, when defining the period between readings. Nonetheless, an actuator might send data to the platform indicating, for example, a status code on the result of a particular action. In this regard, the proposed platform can have a device with variables and commands responsible for both types of communication.  
+
+\subsubsection{Logic Core}
+\label{sec:logicCore}
+
+The main objective of the Logic Core component is to receive data from the \gls{ocb} and the MySQL database, to process it, and to make decisions. This decision process uses a \gls{ga} to define different kinds of light energy for each given shelf/division in the growth tower. The definition of this algorithm is further described in section \ref{sec:geneticAlgorithm}. 
+
+Since this component was developed mainly for the use described in this paper, a Jupyter Notebook, a development environment providing interactive documents, was chosen. Functions can be defined in the notebook and used and repurposed as needed. The Jupyter Notebook could be easily transformed into a Python file or an \gls{api} to be defined as a microservice and integrated with the \gls{iot} platform. 
+
+Figure \ref{fig:logicCore} illustrates the primary communication of this component with other elements on the proposed \gls{iot} platform. This communication happens as follows: I - The Logic Core requests data from for the \gls{ocb} to know the current status of each entity defined in it; II - The component filters this data for relevant data about the crops and the light quality used in the luminaires. It also receives manual data such as crop weight, height, width, etc, as needed. III - The component requests and receives historical data from the MySQL database; IV - The logic core calculates new light qualities accordingly with the \gls{ga} further described in \ref{sec:geneticAlgorithm}; V - Finally, the component sends data, such as a new suggested light recipe composed of new RGB values, and commands, such as to apply the suggested light recipe to the RGB strips, to the \gls{ocb} to be forwarded to other components to change the behavior of the growth tower. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/LogicCore.jpg}
+    \caption{Communication between Logic Core and other components}
+    \label{fig:logicCore}
+\end{figure}
+
+In addition to the main objective of this component, other objectives were defined, such as: I - to describe the entities needed in the \gls{ocb} and \gls{iotaj} for the particular use case described in this paper the first time that the platform is available; II - receive manual data collected for each cultivar, such as weight, height, width, and number of leaves; III - define additional data needed for the correct operation of the platform's components.
+
+\subsection{Proposed genetic algorithm}
+\label{sec:geneticAlgorithm}
+
+The \gls{ga} proposed for this work is illustrated in Figure \ref{fig:geneticAlgorithmProposal}. The algorithm is responsible for evolving to discover the best intensity and color of the RGB light energy the crops must be exposed to, resulting in the best growth rate. This algorithm is based on the Darwin Law, in which the fittest individual survives \cite{coello2007}. The proposed algorithm evaluates the RGB light energy composition and intensity compared to a reference cold white light energy. In addition, a photoperiod of 16 hours was defined for all light treatments. Nine stages are involved in the proposed \gls{ga}. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/proposedGA.png}
+    \caption{Genetic algorithm used in this work.}
+    \label{fig:geneticAlgorithmProposal}
+\end{figure}
+
+In the first stage, an initial group of individuals is generated, called a population, with genes comprised of three chromosomes with arbitrary values ranging from 0 to 255. Each chromosome represents the intensity of a color in the RGB spectrum. This population has six individuals, one for each RGB treatment area in the growth tower. 
+
+In the second stage, the RGB values of each individual are sent from the proposed \gls{iot} platform to the Raspberries Pi, which can turn the RGB light fixtures with the appropriate color. It's worth noting that the Raspberry always turns the RGB and cold white LED fixtures on simultaneously. At the same time, the crop's fresh biomass, height, width, and number of leaves were measured manually for all light treatments. The total mass of the crop, substrate and net pot was weighed using a digital scale. The height was measured from the surface of the substrate to the top of the tallest leaf using a digital caliper. The width was measured from the center of the substrate/crop to the tip of the furthest leaf using a digital caliper. The number of leaves was counted by visual inspection.
+
+In the third stage, the fitness value of each individual is calculated. To accomplish this, fresh biomass, height, width, and number of leaves were measured again after three. After obtaining the data, the difference for each variable (height,  fresh biomass, width, and number of leaves) for a given crop was calculated. Thereafter, the average value of this difference for a given light treatment was calculated. Subsequently, the difference between the average for a given RGB light treatment and the average for the reference cold white light treatment was calculated. Next, the score for each variable was calculated, considering that the maximum difference has a score of 100 and a minimum score of 0. Finally, the fitness score was calculated by the average aptitudes for all variables. 
+
+In the fourth stage, the individual with the highest fitness value is considered the best and selected from the population. In the fifth stage, a new random population with fifty individuals is created, each with three genes ranging from 0 to 255. Note that this population has more individuals than the number of possible light treatments in the growth tower. This procedure is implemented to introduce randomness when creating a new population. In the sixth stage, each gene in the best individual and the random population is converted to an eight-bit representation. This representation is necessary to perform the bit-string crossover procedure between the genes of the selected best individual and each individual in the random population. This creates a new population with mixed genes from the best and random individuals. At the seventh stage, a flipping mutation, with a probability of 5\%, is applied to each gene in each individual. This introduces another level of randomness to the genes in the population. 
+
+In the eighth stage, a new population is created by converting the eight-bit representation of each gene to values ranging from 0 to 255. Finally, six new candidates are randomly selected from the latest population in the ninth stage. The genes of these candidates are sent back to the second stage so the Raspberry Pi can actuate in the light fixtures. This starts a new generation in the \gls{ga}. A pseudo-algorithm of the \gls{ga} is presented in Code \ref{code:geneticAlgorithm}. 
+
+\begin{algorithm}
+\caption{Genetic algorithm pseudocode}\label{alg:cap}
+\begin{algorithmic}
+\State $\text{population} \gets \text{List of size 6 by 3 with random values from 0 to 255}$
+\For{Each light area and each individual in the population}
+    \State $\text{Light area RGB values} \gets \text{individual gene values}$
+\EndFor
+\State $\text{Actuate in the grow tower}$
+\While{$\text{Crops not harvested}$}
+    \State $\text{aptitude} \gets \text{aptitude(population)}$
+    \State $\text{best} \gets \text{best(population, aptitude)}$
+    \State $\text{population} \gets \text{Random population with size 30x3}$ \Comment{30 was chosen at random}
+    \State $\text{population} \gets \text{binary(population)}$
+    \State $\text{best} \gets \text{binary(best)}$
+    \State $\text{population} \gets \text{crossover(population, best)}$
+    \State $\text{population} \gets \text{mutate(population, rate)}$
+    \State $\text{population} \gets \text{decimal(population)}$
+    \State $\text{population} \gets \text{sample(population, 6)}$ \Comment{6 is the number of light areas in the grow tower}
+    \State $\text{Actuate in the grow tower}$
+\EndWhile
+\end{algorithmic}
+\label{code:geneticAlgorithm}
+\end{algorithm}
+
+\section{Data collection}
+\label{sec:dataCollection}
+
+The data collected corresponds to a period of 34 days. The crops were transplanted two days before day 1 to help them adjust to the new environment. During this period, only cold white light treatments were applied. Data collection involved both manual and automated methods. Manual measurements of lettuce fresh biomass, height, width, and leaf count were performed every three days using a digital scale and caliper. Automated measurements included environmental parameters such as temperature and humidity, collected using two DHT22 sensors placed at the top and bottom of the grow tower, as well as system variables like pump status, luminaire status, and lighting conditions. These automated measurements were logged by Raspberry Pi gateways and transmitted to an IoT platform every 10 minutes. The collected data, corresponding devices, and methods are summarized in Table \ref{tab:data_collection}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|c|c}
+    \hline
+        \textbf{Measurement} & \textbf{Device} & \textbf{Method}  \\
+        \hline
+         Weight & Digital scale & Manually  \\
+         Height & Digital caliper & Manually   \\
+         Width & Digital caliper & Manually  \\
+         Number of Leaves & None & Manually   \\
+         Temperature & DHT22 sensor & Automatically  \\
+         Humidity & DHT22 sensor & Automatically  \\
+         Pump status & Relay module & Automatically \\
+         Cold White Luminaire status & Relay module & Automatically  \\
+         RGB light status and intensity & Raspberry Pi & Automatically  \\
+         \hline
+    \end{tabular}
+    \caption{Data collected with their devices and method}
+    \label{tab:data_collection}
+\end{table}
+
+During manual measurements, careful attention was paid to minimize any inconsistencies. Before each measurement of fresh biomass, the substrate was saturated with a nutrient solution taken from the supply tank of the growth tower. This ensured that biomass values were not affected by fluctuations in substrate moisture content across different measurement periods. Additionally, although handling the crops was necessary, it was done with care to minimize alterations to the structure of the plants, which could influence subsequent measurements.
+
+The collected data, both manual and automated, were transmitted to the IoT platform using the Mosquitto \gls{mqtt} Broker and the \gls{iotaj}. These data were stored in two separate databases. The MongoDB database retained the most recent data updates, while the MySQL database preserved the complete historical dataset for all entities, as described in Section \ref{sec:iotPlatform}.
+
+This study did not apply complex signal processing or feature extraction methods to the collected data. All data were stored in their raw form in the MySQL database without transformation or modification, preserving the integrity of the original measurements. To ensure the repeatability of the methods, consistent protocols were maintained throughout the data collection process. Substrate saturation and careful handling of crops were critical steps for ensuring consistent manual measurements. For automated data acquisition, the use of reliable sensors and Raspberry Pi gateways reduced human error and ensured uniform data logging over the course of the study.
+
+\section{Results}
+
+The data collected from manual and automatic measurements are available following guidelines in the Data Availability section. In this section, only the main results or aggregated data is presented from both the \gls{iot} platform and the \gls{ga}. 
+
+\subsection{Data in the platform}
+
+It is vital to notice that the proposed \gls{iot} platform can store historical and context data. The context data changes whenever a new variable is updated in the platform. However, it is possible to access this context data using the \gls{ocb} API. As an example, a request was sent to the \gls{ocb} for data about one light fixture and the result is presented in Figure \ref{fig:luminnarie}. This result indicates that the \gls{ocb} can return the current status of the light fixture whenever a new request is made to it. Note that this entity represents a RGB light fixture with the current RGB values for left and right treatments on a given shelf. It is important to emphasize that this is a sample request, but the \gls{ocb} can respond with data from all entities. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/luminnarie.png}
+    \caption{Response data from \gls{ocb} when a request is made for a given light fixture.}
+    \label{fig:luminnarie}
+\end{figure}
+
+Regarding historical data, the \gls{ocb} sends a notification to the Cygnus component whenever the context data changes. This data is forwarded to the MySQL database to be further stored as historical data for that particular entity. To retrieve this data, it is necessary to connect to the database and use an SQL query for a specific entity. Figures \ref{fig:dht22-temp} and \ref{fig:dht22-humid} present a sample of temperature and humidity values from both DHT22 sensors from the MySQL database. In addition, Figure \ref{fig:pump} presents a sample of the pump working periods, Figure \ref{fig:rgbtreatment} a sample of the RGB treatment, and Figure \ref{fig:coldtreatment} a sample of the cold white light fixture treatment.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/temperature.png}
+    \caption{Sample of the temperature for both DHT22 sensors.}
+    \label{fig:dht22-temp}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/humidity.png}
+    \caption{Sample of the humidity for both DHT22 sensors.}
+    \label{fig:dht22-humid}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/pump.png}
+    \caption{Sample of the pump working periods.}
+    \label{fig:pump}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/rgbtreatment.png}
+    \caption{Sample of the RGB light fixture treatment.}
+    \label{fig:rgbtreatment}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/coldwhite.png}
+    \caption{Sample of the cold white light fixture treatment.}
+    \label{fig:coldtreatment}
+\end{figure}
+
+This result indicates that the temperature and humidity of the growth tower ranged from $22$ to $26^{\circ}C$ and from 60 to 100\%, respectively. In addition, the pump cycled between 5 minutes on and 15 minutes off whereas the cold white light fixture had a photoperiod of 16 hours, from 10am to 11pm. 
+
+\subsection{RGB and fitness values using a genetic algorithm}
+\label{sec:resultsGeneticAlgorithm}
+
+Table \ref{tab:results} presents each day's RGB and fitness values after transplanting the crops to the growth tower. The fitness values were calculated using the manual measurements of weight, height, width, and number of leaves for that given day after transplanting. The bolded RGB values are the best individuals with the highest fitness value found on that particular day. These RGB and fitness values for a given day were introduced in the \gls{ga} presented in Section \ref{sec:geneticAlgorithm} to create a new population of individuals for the next 3-day cycle. Notice that the best individual remains in the same position for one day and three days after, as an underline indicates. 
+
+
+\begin{table}[htbp]
+\scalebox{0.7}{
+\begin{tabular}{l|cccc|cccc|cccc|}
+\cline{2-13}
+                                 & \multicolumn{4}{c|}{\textbf{Day 1}}                                          & \multicolumn{4}{c|}{\textbf{Day 4}}                                   & \multicolumn{4}{c|}{\textbf{Day 7}}                                   \\ \hline
+\multicolumn{1}{|l|}{\textbf{N}} & R            & G            & B            & \multicolumn{1}{l|}{Fit}        & R            & G            & B            & \multicolumn{1}{l|}{Fit} & R            & G            & B            & \multicolumn{1}{l|}{Fit} \\ \hline
+\multicolumn{1}{|l|}{\textbf{1}} & 61           & 171          & 254          & \multicolumn{1}{l|}{\textbf{-}} & \textbf{61}  & \textbf{171} & \textbf{254} & \textbf{94.3}& \underline{61}& \underline{171}& \underline{254}& 71.4                     \\
+\multicolumn{1}{|l|}{\textbf{2}} & 53           & 109          & 92           & \multicolumn{1}{l|}{-}          & 53           & 109          & 92           & 54.5                    & 31           & 171          & 250          & 50.3                     \\
+\multicolumn{1}{|l|}{\textbf{3}} & 45           & 230          & 117          & \multicolumn{1}{l|}{-}          & 45           & 230          & 117          & 56.5                    & 42           & 171          & 227          & 12.0                     \\
+\multicolumn{1}{|l|}{\textbf{4}} & 105          & 50          & 246          & \multicolumn{1}{l|}{-}          & 105          & 50          & 246          & 51.2                    & \textbf{126} & \textbf{203} & \textbf{253} & \textbf{74.0}            \\
+\multicolumn{1}{|l|}{\textbf{5}} & 14           & 127          & 122          & \multicolumn{1}{l|}{-}          & 14           & 127          & 122          & 44.8                    & 60           & 162          & 190          & 36.5                     \\
+\multicolumn{1}{|l|}{\textbf{6}} & 63           & 98          & 81           & \multicolumn{1}{l|}{-}          & 63           & 98          & 81           & 25.0                    & 24           & 169          & 253          & 51.5                     \\ \hline
+\textbf{}                        & \multicolumn{4}{c|}{\textbf{Day 10}}                                         & \multicolumn{4}{c|}{\textbf{Day 13}}                                  & \multicolumn{4}{c|}{\textbf{Day 16}}                                  \\ \hline
+\multicolumn{1}{|l|}{\textbf{N}} & R            & G            & B            & \multicolumn{1}{l|}{Fit}        & R            & G            & B            & \multicolumn{1}{l|}{Fit} & R            & G            & B            & \multicolumn{1}{l|}{Fit} \\ \hline
+\multicolumn{1}{|l|}{\textbf{1}} & \textbf{198} & \textbf{138} & \textbf{240} & \textbf{84.2}                   & \underline{\textbf{198}}& \underline{\textbf{138}}& \underline{\textbf{240}}& \textbf{57.4}& \underline{198}& \underline{138}& \underline{240}& 63.0                     \\
+\multicolumn{1}{|l|}{\textbf{2}} & 51           & 233          & 252          & 74.1                            & 197          & 202          & 240          & 56.1                     & 237          & 139          & 240          & 82.8                     \\
+\multicolumn{1}{|l|}{\textbf{3}} & 122          & 202          & 252          & 56.8                            & 245          & 143          & 240          & 52.4                     & 212          & 138          & 178          & 84.8                     \\
+\multicolumn{1}{|l|}{\textbf{4}} & \underline{126}& \underline{203}& \underline{253}& 30.8                            & 244          & 142          & 251          & 54.2                     & \textbf{199} & \textbf{154} & \textbf{253} & 92.0                     \\
+\multicolumn{1}{|l|}{\textbf{5}} & 87           & 158          & 253          & 50.0                            & 214          & 137          & 247          & 33.7                     & 199          & 130          & 240          & 58.5                     \\
+\multicolumn{1}{|l|}{\textbf{6}} & 108          & 203          & 253          & 30.0                            & 232          & 153          & 240          & 11.4                     & 196          & 158          & 241          & 0.0                      \\ \hline
+                                 & \multicolumn{4}{c|}{\textbf{Day 19}}                                         & \multicolumn{4}{c|}{\textbf{Day 22}}                                  & \multicolumn{4}{c|}{\textbf{Day 25}}                                  \\ \hline
+\multicolumn{1}{|l|}{\textbf{N}} & R            & G            & B            & \multicolumn{1}{l|}{Fit}        & R            & G            & B            & \multicolumn{1}{l|}{Fit} & R            & G            & B            & \multicolumn{1}{l|}{Fit} \\ \hline
+\multicolumn{1}{|l|}{\textbf{1}} & \textbf{211} & \textbf{169} & \textbf{243} & \textbf{88.3}                   & \underline{\textbf{211}}& \underline{\textbf{169}}& \underline{\textbf{243}}& \textbf{84.5}& \underline{\textbf{211}}& \underline{\textbf{169}}& \underline{\textbf{243}}& \textbf{81.0}\\
+\multicolumn{1}{|l|}{\textbf{2}} & 206          & 208          & 249          & 55.2                            & 215          & 169          & 212          & 83.7                     & 218          & 250          & 243          & 19.6                     \\
+\multicolumn{1}{|l|}{\textbf{3}} & 210          & 136          & 237          & 0.0                             & 211          & 169          & 185          & 50.0                     & 51           & 168          & 247          & 77.2                     \\
+\multicolumn{1}{|l|}{\textbf{4}} & \underline{199}& \underline{154}& \underline{253}& 64.6& 211          & 233          & 241          & 52.3                     & 210          & 179          & 38           & 37.3                     \\
+\multicolumn{1}{|l|}{\textbf{5}} & 206          & 171          & 113          & 37.1                            & 209          & 160          & 251          & 25.9                     & 205          & 181          & 240          & 55.6                     \\
+\multicolumn{1}{|l|}{\textbf{6}} & 195          & 155          & 253          & 49.8                            & 158          & 17           & 240          & 24.9                     & 200          & 209          & 242          & 49.7                     \\ \hline
+                                 & \multicolumn{4}{c|}{\textbf{Day 28}}                                         & \multicolumn{4}{c|}{\textbf{Day 31}}                                  & \multicolumn{4}{c|}{\textbf{Day 34}}                                  \\ \hline
+\multicolumn{1}{|l|}{\textbf{N}} & R            & G            & B            & \multicolumn{1}{l|}{Fit}        & R            & G            & B            & \multicolumn{1}{l|}{Fit} & R            & G            & B            & \multicolumn{1}{l|}{Fit} \\ \hline
+\multicolumn{1}{|l|}{\textbf{1}} & \underline{\textbf{211}}& \underline{\textbf{169}}& \underline{\textbf{243}}& \textbf{79.6}                  & \underline{\textbf{211}}& \underline{\textbf{169}}& \underline{\textbf{243}}& \textbf{72.8}& \underline{\textbf{211}}& \underline{\textbf{169}}& \underline{\textbf{243}}& \textbf{100.0}          \\
+\multicolumn{1}{|l|}{\textbf{2}} & 209          & 172          & 244          & 69.9& 210          & 204          & 253          & 65.8                    & 148          & 169          & 242          & 55.84                    \\
+\multicolumn{1}{|l|}{\textbf{3}} & 91           & 169          & 243          & 76.6& 202          & 141          & 195          & 61.6                    & 211          & 141          & 128          & 58.90                    \\
+\multicolumn{1}{|l|}{\textbf{4}} & 216          & 167          & 241          & 53.8& 180          & 174          & 224          & 65.9                    & 167          & 18           & 242          & 44.73                    \\
+\multicolumn{1}{|l|}{\textbf{5}} & 234          & 171          & 244          & 45.6& 138          & 235          & 240          & 67.3                    & 211          & 140          & 49           & 43.69                    \\
+\multicolumn{1}{|l|}{\textbf{6}} & 248          & 170          & 243          & 68.6& 147          & 226          & 241          & 47.7                    & 242          & 164          & 216          & 52.58                    \\ \hline
+\end{tabular}
+}
+\caption{RGB and fitness values for each generation in the genetic algorithm.}
+\label{tab:results}
+\end{table} 
+
+\section{Discussion}
+
+This study has two primary objectives: first, to develop a \gls{dt} of a growth tower, and second, to employ a \gls{ga} to identify the optimal light treatment for a lettuce cultivar. This section discusses both the \gls{dt} and the \gls{ga}.
+
+\subsection{Digital twin of a growth tower}
+
+The key characteristics of a generic \gls{dt} are defined in Table \ref{tab:dtCharacteristics}, as outlined in section \ref{sec:dt}. In this paper, a physical entity refers to a sensor, actuator, or gateway in the growth tower's physical environment (section \ref{sec:infraestructure}), while a virtual entity represents these physical entities within the \gls{iot} platform (section \ref{sec:iotPlatform}).
+
+The proposed \gls{iot} platform enables the monitoring of each physical/virtual entity in near real-time, including both the entities within the platform and the gateways. A central feature of the \gls{dt} is the twinning process, defined in section \ref{sec:dt}, which occurs through communication between physical and virtual entities, facilitated by the gateways and the \gls{ocb} (section \ref{sec:communication}). This twinning process is triggered when changes occur in either the physical environment (e.g., turning on the air conditioner or lights) or in the virtual environment (e.g., when the Logic Core defines and sends a new light recipe to the \gls{ocb}). The rate of this twinning depends on device load and the platform’s capabilities. A precise evaluation of the twinning rate is beyond the scope of this paper. Figure~\ref{fig:twinning-process} illustrates the twinning process within the proposed framework. Physical-to-digital twinning involves collecting data from sensors, both automatically and manually, and transmitting it to the \gls{ocb} and other components for storage and contextualization regarding the grow tower's current status (green arrows). Digital-to-physical twinning originates in the Logic Core, which aggregates current and historical data, processes it, and generates actions subsequently forwarded to actuators (red arrows). Bidirectional communication between the Orion Context Broker, the IoT Agent JSON, and the Mosquitto MQTT Broker is crucial for the \gls{dt} twinning process.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/twinning.png}
+    \caption{Diagram of the twinning process in the proposed architecture.}
+    \label{fig:twinning-process}
+\end{figure}
+
+In line with the framework for \gls{dt} proposed by \cite{verdouw2021}, this paper implements a present and past \gls{dt} by collecting real-time data and storing historical data for future access. Model-based transformation models are integral to the \gls{iot} platform, especially within the \gls{iotaj} and \gls{ocb} components. These models perform two main functions: (I) transforming and parsing data from devices into a unified platform representation, and (II) feeding the data to the Logic Core, which verifies the data and makes decisions to be sent back to the platform. The Logic Core serves as both a discriminator and decision-maker. Lastly, the data collected can simulate an imaginary and future \gls{dt} by modeling the growth tower's behavior with the data as input for these future simulations. However, these simulated and future \gls{dt}s are well beyond the scope of this paper.
+
+\subsection{Genetic Algorithm}
+
+
+
+To the best of our knowledge, this study is the first to apply \gls{ga}s to optimize the light energy composition to be applied in the RGB LEDs in vertical farming in an experimental setup. Direct comparisons with similar methodologies are unavailable in the current literature. However, lettuce is one of the most extensively studied crops in controlled environments with artificial lighting, and existing reviews comprehensively address the effects of various light spectra, intensities, and other environmental factors on lettuce growth \cite{boros2023a}. The authors of \cite{boros2023a} highlight the challenges of comparing results across experiments, primarily due to variations in experimental conditions such as lettuce variety, pre-growing conditions, and environmental parameters like temperature, $CO_2$ levels, \gls{ppfd}, and \gls{dli}. They emphasize that, for lettuce, the optimal spectral distribution involves a ratio of 2.2 for Red and Blue \gls{ppfd} values \cite{boros2023a}. 
+
+The \gls{ga} and the experiment results indicate that the optimal light energy composition for the RGB LEDs found has an RGB composition was 211 for red, 169 for green, and 243 for blue, ranging from 0 to 255. However, some limitations should be noted. For example, it is not guaranteed that slight variations in light intensities will not occur across different light energy compositions in the same generation. Furthermore, the relationship between RGB intensity values and \gls{ppfd} or \gls{dli} was not assessed. 
+Consequently, while the \gls{ga} results provide valuable preliminary insights into the crop’s response to the light energy composition, they should be considered an optimal solution for this specific experimental setup rather than a definitive optimal solution for lettuce cultivation.
+
+In terms of methodology, the integration of the \gls{ga} with the \gls{iot} platform has proven particularly beneficial. First and foremost, it has enabled real-time data from the platform to serve as inputs for the \gls{ga} and facilitated the transmission of the \gls{ga}'s outputs back to the platform. Secondly, this integration enhances the flexibility of the \gls{ga}, allowing it to incorporate, in future studies or alternative setups, a wide range of inputs, such as photoperiod, \gls{ppfd}, \gls{dli}, nutrient solutions, and environmental conditions (e.g., temperature and humidity). Other potential future extensions could include considerations for energy and water usage.
+
+An area for improvement in this study lies in the evaluation of crop characteristics. The \gls{ga} considered only four factors, i.e. the weight, height, width, and number of leaves, with equal weights assigned to each one, as described in section \ref{sec:geneticAlgorithm}. This approach could be refined by incorporating additional crop characteristics and adjusting each specification's weight (importance grade), according to the plant’s growth stage or the user’s priorities and desires. For example, the number of leaves might be more important in the early growth stages, while fresh weight may become the primary focus in later stages. In addition, although this study focuses on lettuce, the proposed methodology is extensible to other crops and experimental setups
+
+\section{Conclusion}
+
+This study presents the development of a \gls{dt} for a growth tower in vertical farming, integrating sensors, actuators, and devices with an IoT platform for monitoring, controlling, and evaluating various light recipes using a \gls{ga}. The application of \gls{dt}s in agriculture is still in its early stages, and this research builds upon previous work, implementing key DT characteristics within a framework tailored to vertical farming environments.
+
+A key feature of the proposed system is its ability to perform the "twinning" process, which enables communication between physical entities, such as sensors, actuators, and gateways, and their virtual counterparts in the IoT platform (\gls{iotaj} and \gls{ocb}). This bidirectional communication ensures near real-time data exchange between the physical and virtual systems. The results demonstrate that the IoT platform can efficiently collect and transmit data from multiple sources, laying the groundwork for future \gls{dt}s in agricultural applications.
+
+In the context of the \gls{ga}, the optimal RGB composition for lettuce was determined to be 211 for red, 169 for green, and 243 for blue. However, this solution is specific to the experimental setup used in this study and should not be considered universally optimal for lettuce cultivation. Several limitations must be acknowledged: minor variations in light intensity may occur across individuals within the same population, and the relationship between RGB intensity values and \gls{ppfd} or \gls{dli} was not assessed. Additionally, the \gls{ga} assigned equal weight to crop characteristics — weight, height, width, and number of leaves — without adjusting for growth stage or user priorities. These limitations suggest opportunities for future refinement, such as incorporating energy consumption and customizing characteristic weightings, while continuing to integrate the \gls{ga} with the \gls{iot} platform.
+
+This study makes a significant contribution to the development of IoT-driven genetic algorithms and digital twins for controlled agriculture. By combining crop physiological data with \gls{iot} technology, this approach enhances our understanding of crop behavior and provides a tool to optimize productivity and sustainability in controlled environment agriculture.
+
+Further research is needed to explore how the proposed \gls{iot} platform can be scaled and how the twinning rate between devices and virtual entities can be improved. Additionally, a more in-depth investigation into the relationship between \gls{ppfd} and RGB light composition is essential, especially with the inclusion of other light spectra such as deep red and ultraviolet. Incorporating automated crop characteristic collection, for example through image recognition, would also be a valuable next step to improve the accuracy and efficiency of the system.
+
+\section*{Acknowledgements}
+
+This study was financed in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Finance Code 001. S. P. Gimenez thanks CNPq (grant number 304427/2022-5) and FAPESP (grant number 2020/09375-0) for the financial support.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the writing process}
+
+During the preparation of this work, the authors used LanguageTool and ChatGPT to correct misspelled words, improve language and readability. After using this tool/service, the authors reviewed and edited the content as needed and takes full responsibility for the content of the publication.
+
+\section*{Data availability}
+\label{sec:dataAvailability}
+
+The code and data utilized in this study are openly available in the GitHub repository at ``rafaelalvesitm/vfarm-article.git''. The code and data are accessible under the MIT license, allowing for reproducibility and further analysis.
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+\appendix
+
+\section{Nutrient solution composition}
+\label{ap:nutrient}
+
+The composition of the nutrient solution used in this study is composed of fertilizers from the hydroponic Flex Kit produced by Plant Par, named Flex Blue and Flex Red. These elements have the following compositions; Flex Blue - Calcium Nitrate and Magnesium nitrate; and Flex Red - EDDHA chelated micros, as well as potassium nitrate, MKP, MAP Cristal, among others. The nutrient guarantees of each component for the Flex Blue and Flex Red are presented in tables \ref{tab:flexBlue} and \ref{tab:flexRed} respectively. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+         \textbf{Nutrient} & Guarantees in \%\\
+         \hline
+         $N$ & 10\\
+         $Ca$ & 15\\
+         $Mg$ & 2\\
+         \hline
+    \end{tabular}
+    \caption{Flex blue guarantees}
+    \label{tab:flexBlue}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+         \textbf{Nutrient} & Guarantees in \%\\
+         \hline
+         $N$ & 8\\
+         $P_2O_5$ & 8\\
+         $K_2O$ & 30 \\
+         $S$ & 3 \\
+         $Mg$ & 1 \\
+         $Fe$ & 0.14 \\
+         $B$ & 0.04 \\
+         $Mn$ & 0.04 \\
+         $Cu$ & 0.03 \\
+         $Zn$ & 0.019 \\
+         $Mo$ & 0.009 \\
+         $Ni$ & 0.006 \\
+         $Co$ & 0.002 \\
+         \hline
+    \end{tabular}
+    \caption{Flex red guarantees}
+    \label{tab:flexRed}
+\end{table}
+
+\section{Electrical circuit schematic for sensors and actuators connect to the Raspberry Pi}
+\label{ap:eletric}
+
+The electrical circuit for the proposed growth tower is composed of two Raspberry Pi, two DHT22 sensors, three luminaires with WS2812B LED strips, one luminaire with cold white LEDs, two relays and one water pimp. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/schema.jpg}
+    \caption{Electrical circuit schematic for sensors and actuators connect to the Raspberry Pi.}
+    \label{fig:eletric}
+\end{figure}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+ \bibliographystyle{elsarticle-num} 
+ \bibliography{cas-refs}
+
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
